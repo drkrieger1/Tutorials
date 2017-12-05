@@ -1,0 +1,11 @@
+C:\Users\EndUser\source\repos\Tutorials\ReactComments\ReactComments\bin\Debug\netcoreapp2.0\ReactComments.deps.json
+C:\Users\EndUser\source\repos\Tutorials\ReactComments\ReactComments\bin\Debug\netcoreapp2.0\ReactComments.runtimeconfig.json
+C:\Users\EndUser\source\repos\Tutorials\ReactComments\ReactComments\bin\Debug\netcoreapp2.0\ReactComments.runtimeconfig.dev.json
+C:\Users\EndUser\source\repos\Tutorials\ReactComments\ReactComments\bin\Debug\netcoreapp2.0\ReactComments.dll
+C:\Users\EndUser\source\repos\Tutorials\ReactComments\ReactComments\obj\Debug\netcoreapp2.0\ReactComments.csprojResolveAssemblyReference.cache
+C:\Users\EndUser\source\repos\Tutorials\ReactComments\ReactComments\obj\Debug\netcoreapp2.0\ReactComments.csproj.CoreCompileInputs.cache
+C:\Users\EndUser\source\repos\Tutorials\ReactComments\ReactComments\obj\Debug\netcoreapp2.0\ReactComments.AssemblyInfoInputs.cache
+C:\Users\EndUser\source\repos\Tutorials\ReactComments\ReactComments\obj\Debug\netcoreapp2.0\ReactComments.AssemblyInfo.cs
+C:\Users\EndUser\source\repos\Tutorials\ReactComments\ReactComments\bin\Debug\netcoreapp2.0\ReactComments.pdb
+C:\Users\EndUser\source\repos\Tutorials\ReactComments\ReactComments\obj\Debug\netcoreapp2.0\ReactComments.dll
+C:\Users\EndUser\source\repos\Tutorials\ReactComments\ReactComments\obj\Debug\netcoreapp2.0\ReactComments.pdb
