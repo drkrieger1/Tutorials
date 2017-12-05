@@ -14,6 +14,10 @@ namespace ReactComments
     {
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+
+        //<Erik 12-5-17> For "app.UseReact(config => ...);" to work you need to change ConfigureServices from "void" to "IServiceProvider"
+        // and add a " return services.BuildServiceProvider();"
+
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
 
