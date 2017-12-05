@@ -1,4 +1,4 @@
-﻿
+﻿//<Erik 12-5-17>
 // Commment box
 // Not sure why, but this block of JSX syntax code only works with .JS file types. 
 // wwwRoot does not recognioce .JSX at all, and if you use js syntax in the.JS it wont render the react code. 
