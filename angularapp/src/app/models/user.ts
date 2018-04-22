@@ -7,5 +7,6 @@ export interface User {
         city?: string,
         zip?: number
     },
-    isActive?: boolean
+    isActive?: boolean,
+    hide?: boolean
 }

@@ -8,7 +8,7 @@ import { User } from '../../models/user';
 })
 export class UsersComponent implements OnInit {
   users: User[];
-  showExtended: boolean = true;
+  showExtended: boolean = false;
   enableAdd: boolean = true;
   
 
@@ -25,7 +25,8 @@ export class UsersComponent implements OnInit {
             city: 'Seattle',
             zip: 98002
         },
-        isActive: true
+        isActive: true,
+        hide: true
      },
      {
         firstName: 'Bill',
@@ -36,7 +37,8 @@ export class UsersComponent implements OnInit {
           city: 'Seattle',
           zip: 98055
       },
-      isActive: false
+      isActive: false,
+      hide: true
      },
      {
         firstName: 'Jill',
@@ -47,7 +49,8 @@ export class UsersComponent implements OnInit {
           city: 'Seattle',
           zip: 98002
       },
-      isActive: false
+      isActive: false,
+      hide: true
      }
     ];
 
@@ -62,7 +65,8 @@ export class UsersComponent implements OnInit {
         city: 'Miami',
         zip: 98198
       },
-      isActive: true
+      isActive: true,
+      hide: true
     });
 
    
@@ -70,6 +74,14 @@ export class UsersComponent implements OnInit {
 
   addUser(user:User) {
     this.users.push(user);
+  }
+
+  fireEvent(e){
+    console.log(e.type);
+  }
+
+  toggleHide(user: User){
+    user.hide = !user.hide;
   }
 
  
