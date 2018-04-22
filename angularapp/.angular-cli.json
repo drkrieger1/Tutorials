@@ -20,7 +20,7 @@
       "prefix": "app",
       "styles": [
         "styles.css",
-        "../node_modules/bootsrap/dist/css/bootstrap.css"
+        "../node_modules/bootstrap/dist/css/bootstrap.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",
