@@ -1,26 +1,18 @@
 <h2>Users</h2>
-<button [disabled]="!enableAdd" class="btn btn-light btn-block mb-3">Add new User</button>
-<ul class="list-unstyled"*ngIf="users.length > 0">
-  <li class="card card-body mb-2"*ngFor="let user of users">
-    <div class="row">
-      <div class="col-sm-4">
-        <!-- Property binding 
-        main method -->
-          <img class="image-fluid" [src]="user.image">
-          <!-- method two with {{item}} -->
-          <!-- <img class="image-fluid" src="{{user.image}}"> -->
-          <!-- method threewiht ngIf and bind-src="item" -->
-          <!-- <img *ngIf="user.image" class="image-fluid" bind-src="user.image"> -->
-      </div>
-      <div class="col-sm-8">
-          <h3>{{user.firstName}} {{user.lastName}}</h3>
-          <ul class="list-group"*ngIf="showExtended && user.age && user.address">
-            <li class="list-group-item">Age: {{user.age}}</li>
-            <li class="list-group-item">Address:{{user.address.street}}, {{user.address.city}}, {{user.address.zip}}</li>
-          </ul>
-      </div>
-    </div>
-    
+<button [disabled]="!enableAdd" class="btn btn-block mb-3" [ngClass]="currentClasses">Add new User</button>
+<ul class="list-unstyled" *ngIf="users.length > 0">
+  <li class="card card-body mb-2" *ngFor="let user of users" [class.bg-light]="user.isActive" [style.border-color]="user.isActive ? 'green' : ''">
+
+
+
+    <h3>{{user.firstName | uppercase}} {{user.lastName}}</h3>
+    <ul class="list-group" *ngIf="showExtended && user.age && user.address">
+      <li class="list-group-item">Age: {{user.age}}</li>
+      <li class="list-group-item">Address:{{user.address.street}}, {{user.address.city}}, {{user.address.zip}}</li>
+    </ul>
+
+
+
   </li>
 </ul>
 
