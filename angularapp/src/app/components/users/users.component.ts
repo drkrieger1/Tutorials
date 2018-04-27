@@ -7,9 +7,20 @@ import { User } from '../../models/user';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+  user: User = {
+    firstName: '',
+    lastName: '',
+    age: null,
+    address: {
+      street: '',
+      city: '',
+      zip: 0
+    }
+  }
   users: User[];
   showExtended: boolean = false;
-  enableAdd: boolean = true;
+  enableAdd: boolean = false;
+  showUserForm: boolean = false;
   
 
   constructor() { }
@@ -56,24 +67,37 @@ export class UsersComponent implements OnInit {
 
     // this.showExtended = false;
 
-    this.addUser({
-      firstName: 'Kirill',
-      lastName: 'Plyushko',
-      age: 25,
-      address: {
-        street: '55 mill st',
-        city: 'Miami',
-        zip: 98198
-      },
-      isActive: true,
-      hide: true
-    });
+    // this.addUser({
+    //   firstName: 'Kirill',
+    //   lastName: 'Plyushko',
+    //   age: 25,
+    //   address: {
+    //     street: '55 mill st',
+    //     city: 'Miami',
+    //     zip: 98198
+    //   },
+    //   isActive: true,
+    //   hide: true
+    // });
 
    
   }
 
-  addUser(user:User) {
-    this.users.push(user);
+  addUser() {
+    this.user.isActive = true;
+    
+    this.users.unshift(this.user);
+    this.user = {
+        firstName: '',
+        lastName: '',
+        age: null,
+        address: {
+          street: '',
+          city: '',
+          zip: 0
+        }
+    }
+    this.showUserForm = false;
   }
 
   fireEvent(e){
@@ -84,6 +108,10 @@ export class UsersComponent implements OnInit {
     user.hide = !user.hide;
   }
 
+  onSubmit(e){
+    console.log(123);
+    e.preventDefault();
+  }
  
 
 }
