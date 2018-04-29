@@ -8,15 +8,11 @@ import { User } from '../../models/user';
 })
 export class UsersComponent implements OnInit {
   user: User = {
-    firstName: '',
-    lastName: '',
-    age: null,
-    address: {
-      street: '',
-      city: '',
-      zip: 0
-    }
+    firstName: ' ',
+    lastName: ' ',
+    email: ' '
   }
+
   users: User[];
   showExtended: boolean = false;
   enableAdd: boolean = false;
@@ -30,36 +26,22 @@ export class UsersComponent implements OnInit {
       {
         firstName: 'Erik',
         lastName: 'Plyushko',
-        age: 26,
-        address: {
-            street: '1234 5th ave',
-            city: 'Seattle',
-            zip: 98002
-        },
+        email: 'eplyushko@gmail.com',
         isActive: true,
         hide: true
      },
      {
         firstName: 'Bill',
         lastName: 'Johnsen',
-        age: 20,
-        address: {
-          street: '1354 10th ste',
-          city: 'Seattle',
-          zip: 98055
-      },
+        email: `@mail.com`,
+        
       isActive: false,
       hide: true
      },
      {
         firstName: 'Jill',
         lastName: 'Basher',
-        age: 30,
-        address: {
-          street: '1436 2nd ave',
-          city: 'Seattle',
-          zip: 98002
-      },
+        email: `@mail.com`,
       isActive: false,
       hide: true
      }
@@ -83,30 +65,18 @@ export class UsersComponent implements OnInit {
    
   }
 
-  addUser() {
-    this.user.isActive = true;
+  // addUser() {
+  //   this.user.isActive = true;
     
-    this.users.unshift(this.user);
-    this.user = {
-        firstName: '',
-        lastName: '',
-        age: null,
-        address: {
-          street: '',
-          city: '',
-          zip: 0
-        }
-    }
-    this.showUserForm = false;
-  }
+  //   this.users.unshift(this.user);
+  //   this.user = {
+  //       firstName: '',
+  //       lastName: '',
+  //       email: ''
+  //   }
+  //   this.showUserForm = false;
+  // }
 
-  fireEvent(e){
-    console.log(e.type);
-  }
-
-  toggleHide(user: User){
-    user.hide = !user.hide;
-  }
 
   onSubmit(e){
     console.log(123);
