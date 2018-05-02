@@ -65,17 +65,17 @@ export class UsersComponent implements OnInit {
    
   }
 
-  // addUser() {
-  //   this.user.isActive = true;
+  addUser() {
+    this.user.isActive = true;
     
-  //   this.users.unshift(this.user);
-  //   this.user = {
-  //       firstName: '',
-  //       lastName: '',
-  //       email: ''
-  //   }
-  //   this.showUserForm = false;
-  // }
+    this.users.unshift(this.user);
+    this.user = {
+        firstName: '',
+        lastName: '',
+        email: ''
+    }
+    this.showUserForm = false;
+  }
 
 
   onSubmit(e){
