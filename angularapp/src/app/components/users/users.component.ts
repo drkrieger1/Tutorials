@@ -33,7 +33,7 @@ export class UsersComponent implements OnInit {
      {
         firstName: 'Bill',
         lastName: 'Johnsen',
-        email: `@mail.com`,
+        email: `bill@mail.com`,
         
       isActive: false,
       hide: true
@@ -41,7 +41,7 @@ export class UsersComponent implements OnInit {
      {
         firstName: 'Jill',
         lastName: 'Basher',
-        email: `@mail.com`,
+        email: `jill@mail.com`,
       isActive: false,
       hide: true
      }
@@ -65,17 +65,17 @@ export class UsersComponent implements OnInit {
    
   }
 
-  // addUser() {
-  //   this.user.isActive = true;
+  addUser() {
+    this.user.isActive = true;
     
-  //   this.users.unshift(this.user);
-  //   this.user = {
-  //       firstName: '',
-  //       lastName: '',
-  //       email: ''
-  //   }
-  //   this.showUserForm = false;
-  // }
+    this.users.unshift(this.user);
+    this.user = {
+        firstName: '',
+        lastName: '',
+        email: ''
+    }
+    this.showUserForm = false;
+  }
 
 
   onSubmit(e){

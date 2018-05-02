@@ -14,15 +14,15 @@ export class UserComponent implements OnInit {
    constructor(){   } 
 
    ngOnInit(){
-    this.user = {
-        firstName: 'Erik',
-        lastName: 'Plyushko',
-        age: 26,
-        address: {
-            street: '1234 5th ave',
-            city: 'Seattle',
-            zip: 98002
-        }
-     }
+    // this.user = {
+    //     firstName: 'Erik',
+    //     lastName: 'Plyushko',
+    //     age: 26,
+    //     address: {
+    //         street: '1234 5th ave',
+    //         city: 'Seattle',
+    //         zip: 98002
+    //     }
+    //  }
    }
 }
