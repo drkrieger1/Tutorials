@@ -20,7 +20,7 @@
 
 
 
-    <h3>{{user.firstName}} {{user.lastName}}<small><button (click)="toggleHide(user)" class="btn btn-dark ml-2"><i [ngClass]="user.hide ? 'fa fa-plus': 'fa fa-minus'" ></i></button></small></h3>
+    <h3>{{user.firstName}} {{user.lastName}}<small><button (click)="user.hide = !user.hide" class="btn btn-dark ml-2"><i [ngClass]="user.hide ? 'fa fa-plus': 'fa fa-minus'" ></i></button></small></h3>
     <ul class="list-group" *ngIf="!user.hide">
       <li class="list-group-item">{{user.email}}</li>
     </ul>
