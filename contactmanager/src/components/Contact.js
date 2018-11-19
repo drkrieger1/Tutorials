@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Contact extends Component {
   render() {
@@ -14,4 +15,10 @@ class Contact extends Component {
   }
 }
 
+//Typechecking
+Contact.propTypes = {
+  name: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  phone: PropTypes.string
+};
 export default Contact;
