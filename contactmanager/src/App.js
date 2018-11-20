@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Contact from './components/Contact';
+import Contacts from './components/Contacts';
 import Header from './components/Header';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,13 +12,7 @@ class App extends Component {
         <Header branding="Contact Manager" />
 
         <div className="container">
-          <Contact name="John Doe" email="jdoe@mail.com" phone="555-555-555" />
-
-          <Contact
-            name="Jane Doe"
-            email="janedoe@mail.com"
-            phone="555-777-888"
-          />
+          <Contacts />
         </div>
       </div>
     );
