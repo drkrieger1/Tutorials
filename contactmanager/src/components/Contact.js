@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 class Contact extends Component {
   render() {
     return (
-      <div>
+      <div className="card card-body mb-3">
         <h4>{this.props.name}</h4>
-        <ul>
-          <li>Email: {this.props.email}</li>
-          <li>Phone: {this.props.phone}</li>
+        <ul className="list-group">
+          <li className="list-group-item">Email: {this.props.email}</li>
+          <li className="list-group-item">Phone: {this.props.phone}</li>
         </ul>
       </div>
     );
