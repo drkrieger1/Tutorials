@@ -16,6 +16,7 @@ const reducer = (state, action) => {
         ...state,
         contacts: [action.payload, ...state.contacts]
       };
+
     default:
       return state;
   }
