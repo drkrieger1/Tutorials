@@ -47,7 +47,6 @@ class AddContact extends Component {
     };
 
     dispatch({ type: 'ADD_CONTACT', payload: newContact });
-    console.log('Contact submitted');
 
     //Clear state
     this.setState({
@@ -56,6 +55,8 @@ class AddContact extends Component {
       phone: '',
       errors: {}
     });
+
+    this.props.history.push('/');
   }
 
   render() {
