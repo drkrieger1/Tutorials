@@ -9,7 +9,8 @@ class AddContact extends Component {
     this.state = {
       name: '',
       email: '',
-      phone: ''
+      phone: '',
+      errors: {}
     };
     this.handleChange.bind(this);
     this.onSubmit.bind(this);
@@ -23,6 +24,21 @@ class AddContact extends Component {
   onSubmit(event, dispatch) {
     event.preventDefault();
     const { name, email, phone } = this.state;
+
+    //Check errors
+    if (name === '') {
+      this.setState({ errors: { name: 'Name is requierd' } });
+      return;
+    }
+    if (email === '') {
+      this.setState({ errors: { email: 'email is requierd' } });
+      return;
+    }
+    if (phone === '') {
+      this.setState({ errors: { name: 'phone is requierd' } });
+      return;
+    }
+
     const newContact = {
       id: uuid(),
       name,
@@ -33,14 +49,17 @@ class AddContact extends Component {
     dispatch({ type: 'ADD_CONTACT', payload: newContact });
     console.log('Contact submitted');
 
+    //Clear state
     this.setState({
       name: '',
       email: '',
-      phone: ''
+      phone: '',
+      errors: {}
     });
   }
+
   render() {
-    const { name, email, phone } = this.state;
+    const { name, email, phone, errors } = this.state;
 
     return (
       <Consumer>
@@ -59,6 +78,7 @@ class AddContact extends Component {
                     onChange={e => {
                       this.handleChange('name', e.target.value);
                     }}
+                    error={errors.name}
                   />
                   <TextInputGroup
                     label="Email"
@@ -69,6 +89,7 @@ class AddContact extends Component {
                     onChange={e => {
                       this.handleChange('email', e.target.value);
                     }}
+                    error={errors.email}
                   />
                   <TextInputGroup
                     label="Phone"
@@ -78,6 +99,7 @@ class AddContact extends Component {
                     onChange={e => {
                       this.handleChange('phone', e.target.value);
                     }}
+                    error={errors.phone}
                   />
                   <input
                     type="submit"
