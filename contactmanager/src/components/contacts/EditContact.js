@@ -23,7 +23,7 @@ class EditContact extends Component {
     const { id } = this.props.match.params;
     const res = await axios.get(
       `https://jsonplaceholder.typicode.com/users/${id}`
-    );
+    ); //must use await instead of then
 
     const contact = res.data;
 
@@ -35,7 +35,6 @@ class EditContact extends Component {
   }
 
   handleChange(name, value) {
-    console.log(name, value);
     this.setState({ [name]: value });
   }
 
@@ -56,6 +55,21 @@ class EditContact extends Component {
       this.setState({ errors: { name: 'phone is requierd' } });
       return;
     }
+
+    const updContact = {
+      name,
+      email,
+      phone
+    };
+    //extracts data from url
+    const { id } = this.props.match.params;
+
+    //example of non async call
+    axios
+      .put(`https://jsonplaceholder.typicode.com/users/${id}`, updContact)
+      .then(res => {
+        dispatch({ type: 'UPDATE_CONTACT', payload: res.data });
+      });
 
     //Clear state
     this.setState({
