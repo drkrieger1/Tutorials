@@ -5,7 +5,13 @@ import About from './components/Pages/About';
 import NotFound from './components/Pages/NotFound';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Provider } from './context';
+// context api Provider
+//import { Provider } from './context';
+
+// Redux Provider
+import { Provider } from 'react-redux';
+import store from './store';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import AddContact from './components/contacts/AddContact';
@@ -14,7 +20,7 @@ import EditContact from './components/contacts/EditContact';
 class App extends Component {
   render() {
     return (
-      <Provider>
+      <Provider store={store}>
         <Router>
           <div className="App">
             <Header branding="Contact Manager" />
