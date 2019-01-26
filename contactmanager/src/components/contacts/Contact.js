@@ -30,51 +30,40 @@ class Contact extends Component {
     const { showInfo } = this.state;
 
     return (
-      <Consumer>
-        {value => {
-          const { dispatch } = value;
-          return (
-            <div className="card card-body mb-3">
-              <h4>
-                <i
-                  onClick={this.handleClick.bind(this)}
-                  className={
-                    showInfo ? 'fas fa-sort-up mr-2' : 'fas fa-sort-down mr-2'
-                  }
-                  style={{ cursor: 'pointer' }}
-                />
-                {this.props.name}
-                <i
-                  className="fas fa-times"
-                  style={{ cursor: 'pointer', float: 'right', color: 'red' }}
-                  onClick={this.onDeleteClick.bind(
-                    this,
-                    this.props.id,
-                    dispatch
-                  )}
-                />
-                <Link to={`contact/edit/${this.props.id}`}>
-                  <i
-                    className="fas fa-pencil-alt"
-                    style={{
-                      cursor: 'pointer',
-                      float: 'right',
-                      color: 'black',
-                      marginRight: '1rem'
-                    }}
-                  />
-                </Link>
-              </h4>
-              {showInfo ? (
-                <ul className="list-group">
-                  <li className="list-group-item">Email: {this.props.email}</li>
-                  <li className="list-group-item">Phone: {this.props.phone}</li>
-                </ul>
-              ) : null}
-            </div>
-          );
-        }}
-      </Consumer>
+      <div className="card card-body mb-3">
+        <h4>
+          <i
+            onClick={this.handleClick.bind(this)}
+            className={
+              showInfo ? 'fas fa-sort-up mr-2' : 'fas fa-sort-down mr-2'
+            }
+            style={{ cursor: 'pointer' }}
+          />
+          {this.props.name}
+          <i
+            className="fas fa-times"
+            style={{ cursor: 'pointer', float: 'right', color: 'red' }}
+            onClick={this.onDeleteClick.bind(this, this.props.id)}
+          />
+          <Link to={`contact/edit/${this.props.id}`}>
+            <i
+              className="fas fa-pencil-alt"
+              style={{
+                cursor: 'pointer',
+                float: 'right',
+                color: 'black',
+                marginRight: '1rem'
+              }}
+            />
+          </Link>
+        </h4>
+        {showInfo ? (
+          <ul className="list-group">
+            <li className="list-group-item">Email: {this.props.email}</li>
+            <li className="list-group-item">Phone: {this.props.phone}</li>
+          </ul>
+        ) : null}
+      </div>
     );
   }
 }
